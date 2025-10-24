@@ -1,0 +1,186 @@
+/* Apply to all elements: makes width/height include padding and border */
+* {
+  box-sizing: border-box;
+}
+
+/* Style for entire webpage */
+body {
+  margin: 0; /* Remove default space around body */
+  font-family: "Poppins", sans-serif; /* Set clean modern font */
+  background: #f7f9fc; /* Light grayish-blue background */
+  color: #333; /* Dark gray text color */
+}
+
+/* Style for header & footer bar */
+header,footer {
+  background: #4e6ef2; /* Blue background */
+  color: white; /* White text color */
+  padding: 15px 0; /* Top and bottom spacing */
+  text-align: center; /* Center text horizontally */
+  font-size: 1.5rem; /* Slightly large text */
+  letter-spacing: 1px; /* Small space between letters */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle bottom shadow */
+}
+
+/* Style for the search bar container */
+.search-bar {
+  display: flex; /* Arrange items in a row */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  gap: 10px; /* Space between input and button */
+  margin: 25px 0; /* Space above and below */
+}
+
+/* Style for the text input box */
+.search-bar input {
+  width: 60%; /* Take 60% of the container width */
+  padding: 10px 12px; /* Inner spacing for comfortable typing */
+  border-radius: 8px; /* Rounded corners */
+  border: 1px solid #ccc; /* Light gray border */
+  font-size: 1rem; /* Normal readable text size */
+  outline: none; /* Remove default outline */
+  transition: 0.3s; /* Smooth focus effect */
+}
+
+/* When input is clicked/focused */
+.search-bar input:focus {
+  border-color: #4e6ef2; /* Highlight border in blue */
+  box-shadow: 0 0 0 3px rgba(78, 110, 242, 0.2); /* Soft blue glow */
+}
+
+/* Style for the search button */
+.search-bar button {
+  padding: 10px 20px; /* Button size */
+  background: #4e6ef2; /* Blue background */
+  color: white; /* White text */
+  border: none; /* Remove default border */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: 0.3s; /* Smooth hover effect */
+}
+
+/* Change color on hover */
+.search-bar button:hover {
+  background: #2d3a8c; /* Darker blue when hovered */
+}
+
+/* Container for all book cards */
+.book-grid {
+  display: grid; /* Grid layout for books */
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  /* Automatically fit as many columns as possible,
+     each at least 180px wide, expanding if space allows */
+  gap: 25px; /* Space between cards */
+  padding: 0 20px 50px; /* Left-right and bottom padding */
+}
+
+/* Style for each individual book card */
+.book-card {
+  background: white; /* White card background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Soft shadow */
+  text-align: center; /* Center text */
+  padding: 15px; /* Inner spacing */
+  transition: transform 0.25s ease, box-shadow 0.25s ease; /* Smooth animation */
+}
+
+/* When hovering over a book card */
+.book-card:hover {
+  transform: translateY(-8px); /* Lift the card slightly up */
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12); /* Stronger shadow */
+}
+
+/* Style for book cover image */
+.book-card img {
+  width: 100%; /* Image fills card width */
+  height: 230px; /* Fixed height for uniform look */
+  object-fit: cover; /* Crop image neatly without stretching */
+  border-radius: 10px; /* Rounded image corners */
+}
+
+/* Book title inside card */
+.book-card h3 {
+  font-size: 1.1rem; /* Medium title size */
+  margin: 10px 0 5px; /* Space around title */
+  color: #222; /* Dark text */
+}
+
+/* Author name text */
+.book-card p {
+  font-size: 0.9rem; /* Slightly smaller text */
+  color: #666; /* Gray text color */
+}
+
+/* View Details button */
+.book-card button {
+  margin-top: 10px; /* Space above the button */
+  background: #28a745; /* Green background */
+  color: white; /* White text */
+  border: none; /* No border */
+  padding: 8px 12px; /* Comfortable size */
+  border-radius: 6px; /* Rounded corners */
+  cursor: pointer; /* Pointer cursor */
+  transition: background 0.3s; /* Smooth color change */
+}
+
+/* Button hover effect */
+.book-card button:hover {
+  background: #1e7e34; /* Darker green on hover */
+}
+
+/* Book detail page container */
+.book-detail {
+  background: white; /* White background */
+  max-width: 700px; /* Limit width for readability */
+  margin: 30px auto; /* Center it with top-bottom margin */
+  padding: 25px; /* Inner spacing */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Light shadow */
+}
+
+/* Large book image on detail page */
+.book-detail img {
+  width: 300px; /* Fixed width */
+  display: block; /* Make it behave like a block element */
+  margin: 0 auto 20px; /* Center horizontally and add bottom space */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Title in detail page */
+.book-detail h2 {
+  text-align: center; /* Center text */
+  color: #2d3a8c; /* Dark blue color */
+}
+
+/* Description and author text */
+.book-detail p {
+  max-width: 700px; /* Limit line length */
+  margin: 10px auto; /* Center with spacing */
+  line-height: 1.6; /* Better readability */
+  text-align: center; /* Centered text */
+  color: #555; /* Medium gray */
+}
+
+/* Link to OpenLibrary */
+.book-detail a {
+  display: inline-block; /* So we can apply margin easily */
+  margin-top: 15px; /* Space above */
+  color: #4e6ef2; /* Blue link */
+  font-weight: 500; /* Slightly bold */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Hover underline for link */
+.book-detail a:hover {
+  text-decoration: underline; /* Show underline when hovered */
+}
+
+/* Responsive design: for mobile/tablets (screen ≤ 768px) */
+@media (max-width: 768px) {
+  .search-bar input {
+    width: 70%; /* Make input narrower to fit small screen */
+  }
+  .book-detail img {
+    width: 80%; /* Make image smaller for small screens */
+  }
+}
