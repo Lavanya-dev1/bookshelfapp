@@ -13,7 +13,7 @@ import App from './App.jsx'
 // Create a React root and render the App component inside the 'root' div (from index.html)
 createRoot(document.getElementById('root')).render(
   // Wrap the app with BrowserRouter so routing features (like Routes, useNavigate, etc.) can be used
- <BrowserRouter>
+ <BrowserRouter basename="/bookshelfapp">
     {/* StrictMode helps catch potential errors and warnings during development */}
     <StrictMode>
       {/* Render the main App component */}

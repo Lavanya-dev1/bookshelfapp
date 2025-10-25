@@ -32,7 +32,7 @@ function App() {
         {/* Define routing for the application */}
         <Routes>
           {/* Route for the homepage — renders the Home component when URL is "/" */}
-          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
 
           {/* Route for book details — renders BookDetailPage when URL matches "/book/:id" */}
           {/* ":id" is a dynamic parameter that can be accessed inside BookDetailPage */}
